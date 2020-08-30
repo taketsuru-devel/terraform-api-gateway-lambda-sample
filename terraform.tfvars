@@ -1,1 +1,1 @@
-project_name = "vpc-sample"
+project_name = "api-gateway-lambda-sample"

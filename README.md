@@ -10,3 +10,5 @@
 
 - 既存構成を参考にする場合
     - terraform import resource_type.resource_name aws_resoure_id(not arn)
+
+# 必要に応じてコンソールからapiのデプロイ

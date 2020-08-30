@@ -1,3 +1,5 @@
 .terraform
 *.swp
 terraform.tfstate
+terraform.tfstate.backup
+dist
