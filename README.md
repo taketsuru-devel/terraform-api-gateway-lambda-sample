@@ -1,3 +1,7 @@
+# 環境
+- amazon linux2
+- terraform v0.13.0
+
 # terraform勉強中
 - api-gateway&lambdaのsnippet
 - いわゆるlambda proxy
