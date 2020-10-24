@@ -2,4 +2,4 @@
 *.swp
 terraform.tfstate
 terraform.tfstate.backup
-#deployment/dist/*.zip
+deployment/dist/*.zip

@@ -23,6 +23,10 @@ resource "aws_lambda_function" "this" {
   runtime          = var.runtime
   handler          = var.handler
   timeout          = 10
+  vpc_config {
+    subnet_ids = var.lambda_subnet_ids
+    security_group_ids = var.lambda_security_group_ids
+  }
   filename         = data.archive_file.source_code.output_path
   source_code_hash = data.archive_file.source_code.output_base64sha256
 }
