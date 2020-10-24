@@ -5,6 +5,7 @@
 # terraform勉強中
 - api-gateway&lambdaのsnippet
 - いわゆるlambda proxy
+- 単一ソースファイルからのみの対応
 
 # コマンド
 - terraform init
@@ -12,10 +13,28 @@
 - terraform apply
 - terraform destroy
 
+# input
+- project_name
+- source_file
+- output_path
+- runtime
+- handler
+
+# output
+- 必要になったら考える
+
 - 既存構成を参考にする場合
     - terraform import resource_type.resource_name aws_resoure_id(not arn)
 
+# todo
+- cloudwatchとか
+- コンソールで手動デプロイが必要
+    - /v1とかでhttps://~.amazonaws.com/v1/apになる
+
 # 必要に応じてコンソールからapiのデプロイ
+
+
+### 以下昔から残ってたメモ
 
 # lambdaを特定のvpc(subnet)で実行し、vpcピアリング接続をしたい場合
 ## 以下例はec2のデフォルトvpcに対しlambda->vpcの一方通行で満足しているので最小限だと思う
