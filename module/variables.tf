@@ -22,6 +22,12 @@ variable "lambda_security_group_ids" {
   default = []
 }
 
+variable "addditional_policy_for_lambda_iam" {
+  description = "array of policy_arn for lambda_iam"
+  type = list(string)
+  default = []
+}
+
 variable "runtime" {
   description = "runtime name, e.g. python3.6"
 }

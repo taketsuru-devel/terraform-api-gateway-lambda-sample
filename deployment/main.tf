@@ -19,4 +19,5 @@ module "apigw-lambda" {
   output_path = "dist/lambda.zip"
   runtime = "python3.6"
   handler = "index.lambda_handler"
+  # addditional_policy_for_lambda_iam = ["arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"]
 }
