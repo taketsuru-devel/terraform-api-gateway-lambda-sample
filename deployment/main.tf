@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "terraform-tfstate-s3"
+    region = "ap-northeast-1"
+    key = "api-gateway-lambda-sample"
+  }
+}
+
 provider "aws" {
   region = "ap-northeast-1"
   profile = "default"
