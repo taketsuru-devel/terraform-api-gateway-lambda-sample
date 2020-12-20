@@ -35,3 +35,18 @@ variable "runtime" {
 variable "handler" {
   description = "entrypoint of source code, e.g. index.lambda_handler"
 }
+
+variable "stage_name" {
+  description = "deploy stage name, e.g. v1"
+}
+
+variable "logging_level" {
+  description = "logging level, 'INFO' or 'ERROR'"
+  type = string
+  default = "ERROR"
+}
+variable "data_trace_enabled" {
+  description = "logging all request/response, true or false"
+  type = bool
+  default = false
+}

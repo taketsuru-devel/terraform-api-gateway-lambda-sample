@@ -19,12 +19,22 @@
 - output_path
 - runtime
 - handler
+- stage_name
+- logging_level
+- deta_trace_enabled
 
 # output
 - 必要になったら考える
 
 - 既存構成を参考にする場合
     - terraform import resource_type.resource_name aws_resoure_id(not arn)
+
+# memo
+- 何故か一発で成功しない
+    - 初回はこんなエラーが出る
+    - Error: Error creating API Gateway Deployment: BadRequestException: The REST API doesn't contain any methods 
+- log_groupの名前は指定できないっぽい
+    - API-Gateway-Execution-Logs_(apigwのリソース名:apigw生成時に発番される10桁英数字)
 
 # todo
 - cloudwatchとか

@@ -34,3 +34,34 @@ resource "aws_api_gateway_integration" "lambda_integration" {
 
 }
 
+resource "aws_api_gateway_deployment" "this" {
+  rest_api_id = aws_api_gateway_rest_api.this.id
+  stage_name  = format("%s_deploy",var.stage_name)
+}
+
+resource "aws_api_gateway_stage" "this" {
+  stage_name    = var.stage_name
+  rest_api_id = aws_api_gateway_rest_api.this.id
+  deployment_id = aws_api_gateway_deployment.this.id
+}
+
+resource "aws_api_gateway_account" "cw" {
+  cloudwatch_role_arn = aws_iam_role.apigw_log.arn
+}
+
+resource "aws_api_gateway_method_settings" "this" {
+  rest_api_id = aws_api_gateway_rest_api.this.id
+  stage_name  = aws_api_gateway_stage.this.stage_name
+  #method_path = format("%s/%s", aws_api_gateway_resource.root.path_part, aws_api_gateway_method.any.http_method)
+  method_path = "*/*"
+  depends_on = [
+    aws_api_gateway_account.cw,
+  ]
+
+  settings {
+    metrics_enabled = false
+    logging_level   = var.logging_level
+    data_trace_enabled = var.data_trace_enabled
+  }
+}
+
