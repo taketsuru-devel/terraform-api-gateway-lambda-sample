@@ -35,13 +35,7 @@
     - Error: Error creating API Gateway Deployment: BadRequestException: The REST API doesn't contain any methods 
 - log_groupの名前は指定できないっぽい
     - API-Gateway-Execution-Logs_(apigwのリソース名:apigw生成時に発番される10桁英数字)
-
-# todo
-- cloudwatchとか
-- コンソールで手動デプロイが必要
-    - /v1とかでhttps://~.amazonaws.com/v1/apになる
-
-# 必要に応じてコンソールからapiのデプロイ
+- log_groupは自動生成されるがdestroy時に自動削除されない
 
 
 ### 以下昔から残ってたメモ
