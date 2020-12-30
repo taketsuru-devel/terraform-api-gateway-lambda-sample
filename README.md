@@ -29,6 +29,17 @@
 - 既存構成を参考にする場合
     - terraform import resource_type.resource_name aws_resoure_id(not arn)
 
+# lambda周りの更新
+## 共通
+- python:3.6.12-busterをdocker pull
+- docker_python.shでログイン
+- 作業後の各フォルダがrootなので戻しておく
+## requirements.txtの更新
+- コード書いてpip install
+- pip freeze > requirements.txt
+## lambdaアップロードの準備
+- build.sh実行
+
 # memo
 - 何故か一発で成功しない
     - 初回はこんなエラーが出る

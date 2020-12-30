@@ -23,6 +23,7 @@ resource "aws_lambda_function" "this" {
   runtime          = var.runtime
   handler          = var.handler
   timeout          = 10
+  layers           = var.lambda_layers
   vpc_config {
     subnet_ids = var.lambda_subnet_ids
     security_group_ids = var.lambda_security_group_ids

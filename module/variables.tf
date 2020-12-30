@@ -10,6 +10,12 @@ variable "output_path" {
   description = "output path and filename of code of lambda, must be .zip"
 }
 
+variable "lambda_layers" {
+  description = "array of lambda layer arn"
+  type = list(string)
+  default = []
+}
+
 variable "lambda_subnet_ids" {
   description = "array of subnet id for lambda"
   type = list(string)
